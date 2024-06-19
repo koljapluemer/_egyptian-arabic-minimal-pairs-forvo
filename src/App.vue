@@ -31,11 +31,18 @@ let isRevealed = ref(false);
 
 generateRandomExercise();
 
-function generateRandomExercise() {
-  // set dividend to random between 800 and 5
-  dividend.value = Math.floor(Math.random() * (800 - 5 + 1) + 5);
-  guess.value = null;
+async function generateRandomExercise() {
   isRevealed.value = false;
+  //  select random item from items array
+  const randomItem = Object.keys(items)[
+    Math.floor(Math.random() * Object.keys(items).length)
+  ];
+
+  // TODO: need some way to handle secret
+  const response = await fetch(``);
+  const data = await response.json();
+  console.log(data);
+
 }
 </script>
 
